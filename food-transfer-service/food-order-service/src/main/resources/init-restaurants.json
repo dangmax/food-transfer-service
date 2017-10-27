@@ -1,0 +1,19 @@
+{
+  "restaurants": [
+    {
+      "restname": "r1",
+      "address": "address1",
+      "phone": "123"
+    },
+    {
+      "restname": "r2",
+      "address": "address2",
+      "phone": "456"
+    },
+    {
+      "restname": "r3",
+      "address": "address3",
+      "phone": "789"
+    }
+  ]
+}

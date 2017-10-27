@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/platform/eureka/eureka.iml" filepath="$PROJECT_DIR$/platform/eureka/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/food-delivery-service/food-delivery-service.iml" filepath="$PROJECT_DIR$/food-delivery-service/food-delivery-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/food-order-service/food-order-service.iml" filepath="$PROJECT_DIR$/food-order-service/food-order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/food-payment-service/food-payment-service.iml" filepath="$PROJECT_DIR$/food-payment-service/food-payment-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/food-transfer-service.iml" filepath="$PROJECT_DIR$/food-transfer-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platform/hystrix-dashboard/hystrix-dashboard.iml" filepath="$PROJECT_DIR$/platform/hystrix-dashboard/hystrix-dashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platform/platform.iml" filepath="$PROJECT_DIR$/platform/platform.iml" />
+    </modules>
+  </component>
+</project>

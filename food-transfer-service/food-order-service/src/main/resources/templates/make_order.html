@@ -1,0 +1,9 @@
+<form action="/dishorder/save" th:object="dishOrder">
+    <br>
+    <input type="text" id="" name="${dishOrder.items[0].name}">
+    <input type="text" id="" name="${dishOrder.items[0].price}">
+    <input type="text" id="" name="${dishOrder.items[0].quantity}">
+    </br>
+    <input type="text" id="note" name="note" value="${dishOrder.note}">
+    <input type="text" id="address" name="address" value="${dishOrder.address}">
+</form>
