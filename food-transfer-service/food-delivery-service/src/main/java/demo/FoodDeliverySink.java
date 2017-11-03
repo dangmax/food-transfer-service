@@ -18,8 +18,6 @@ public class FoodDeliverySink {
 
     @ServiceActivator(inputChannel = Sink.INPUT)
     public void delivery(String payInfo) throws IOException {
-
         log.info("delivery pay_order: " + payInfo);
-
     }
 }

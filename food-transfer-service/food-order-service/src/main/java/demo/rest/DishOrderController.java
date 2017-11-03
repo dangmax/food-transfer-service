@@ -32,6 +32,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.support.BindingAwareModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
@@ -70,7 +71,7 @@ public class DishOrderController {
 
     //save dishorder
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveDishOrder(DishOrder dishorder) {
+    public String saveDishOrder(@ModelAttribute("dishorder") DishOrder dishorder) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
         dishorder.setOrdertime(sdf.format(new Date()));
         double totalprice=0;

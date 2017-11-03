@@ -74,6 +74,7 @@ public class RestaurantUploadController {
             model.addAttribute("errorMsg","can not find restaurant!");
             goPage = "/error";
         } else {
+            model.addAttribute("restaurant",restaurant);
             goPage = "make_order";
         }
         return goPage;

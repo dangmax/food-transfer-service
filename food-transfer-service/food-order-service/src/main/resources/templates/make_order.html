@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+                 xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <title>Title</title>
 </head>
 <body>
+Restaurant Name: <b th:text="${restaurant.restname}"/><br/>
 <form action="/dishorder/save" method="post">
+
+    <!--<table>-->
+        <!--<tr>-->
+            <!--<td>name</td>-->
+            <!--<td>price</td>-->
+            <!--<td>quantity</td>-->
+        <!--</tr>-->
+        <!--<tr th:each="menuitem:${restaurant.menuItems}">-->
+            <!--<td th:text="${menuitem.name}"  th:name="selectItems[0].name"  />-->
+            <!--<td th:text="${menuitem.price}" th:name="selectItems[0].price" />-->
+            <!--<td><input type="text" th:name="selectItems[0].quantity" /></td>>-->
+        <!--</tr>-->
+    <!--</table>-->
+
     <br>
         Name:    <input type="text" name="selectItems[0].name" />
         Price:   <input type="text" name="selectItems[0].price" />

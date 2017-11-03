@@ -8,6 +8,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Document
@@ -22,13 +24,16 @@ public class Restaurant {
     private String restname;
     private String address;
     private String phone;
+    private List<MenuItem>  menuItems;
 
     @JsonCreator
-    public Restaurant(@JsonProperty("id") long id, @JsonProperty("restname") String restname, @JsonProperty("address") String address, @JsonProperty("phone") String phone) {
+    public Restaurant(@JsonProperty("id") long id, @JsonProperty("restname") String restname, @JsonProperty("address") String address, @JsonProperty("phone") String phone
+    ,@JsonProperty("menuItems") List<MenuItem> menuItems) {
         this.id =id;
         this.restname = restname;
         this.address = address;
         this.phone = phone;
+        this.menuItems = menuItems;
     }
 
 

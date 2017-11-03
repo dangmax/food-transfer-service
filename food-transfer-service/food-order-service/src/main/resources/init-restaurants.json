@@ -1,20 +1,40 @@
 [
     {
-      "id":1,
-      "restname": "r1",
+      "id":4,
+      "restname": "r4",
       "address": "address1",
-      "phone": "123"
+      "phone": "123",
+      "menuItems":
+      [
+        {
+          "name":"noodle",
+          "price":"10"
+        },
+        {
+          "name":"beef",
+          "price":"28"
+        }
+      ]
     },
     {
-      "id":2,
-      "restname": "r2",
+      "id":5,
+      "restname": "r5",
       "address": "address2",
-      "phone": "456"
-    },
-    {
-      "id":3,
-      "restname": "r3",
-      "address": "address3",
-      "phone": "789"
+      "phone": "456",
+      "menuItems":
+      [
+        {
+          "name":"tudousi",
+          "price":"114"
+        },
+        {
+          "name":"gaobaojiding",
+          "price":"20"
+        },
+        {
+          "name":"yuxiangrousi",
+          "price":"16"
+        }
+      ]
     }
 ]

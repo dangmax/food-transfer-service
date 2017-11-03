@@ -11,6 +11,10 @@ spring:
   data:
     mongodb:
       uri: mongodb://dang:dang@localhost:27017/fooddb
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
 com:
   dang:
     food:
