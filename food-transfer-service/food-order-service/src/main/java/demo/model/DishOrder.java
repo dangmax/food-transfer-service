@@ -14,13 +14,12 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class DishOrder {
 
-    @Id
-    private long id;
 
+    private long id;
     private String note;
     private double totalPrice;
     private String deliveryAddress;
-    private Date ordertime;
+    private String ordertime;
 
     private List<MenuItem> selectItems;
 

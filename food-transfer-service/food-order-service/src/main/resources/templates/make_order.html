@@ -1,9 +1,25 @@
-<form action="/dishorder/save" th:object="dishOrder">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+<form action="/dishorder/save" method="post">
     <br>
-    <input type="text" id="" name="${dishOrder.items[0].name}">
-    <input type="text" id="" name="${dishOrder.items[0].price}">
-    <input type="text" id="" name="${dishOrder.items[0].quantity}">
+        Name:    <input type="text" name="selectItems[0].name" />
+        Price:   <input type="text" name="selectItems[0].price" />
+        Quantity:<input type="text" name="selectItems[0].quantity" />
     </br>
-    <input type="text" id="note" name="note" value="${dishOrder.note}">
-    <input type="text" id="address" name="address" value="${dishOrder.address}">
+    <br>
+        Name:    <input type="text" name="selectItems[1].name" />
+        Price:   <input type="text" name="selectItems[1].price" />
+        Quantity:<input type="text" name="selectItems[1].quantity" />
+    </br>
+    <p/>
+    Note:   <input type="text" name="note" /> <br/>
+    Address:<input type="text" name="deliveryAddress" /> <br/>
+    <p><input type="submit" value="Submit" /> </p>
 </form>
+</body>
+</html>

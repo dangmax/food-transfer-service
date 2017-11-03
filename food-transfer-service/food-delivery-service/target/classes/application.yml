@@ -1,9 +1,0 @@
-server:
-  port: 9007
-spring:
-  application:
-    name: food-delivery-service
-  cloud:
-    stream:
-      bindings:
-        input: deliveryorders

@@ -4,6 +4,7 @@ import demo.model.Restaurant;
 import demo.model.RestaurantRepository;
 import demo.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +17,8 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public List<Restaurant> saveRestaurants(List<Restaurant> restaurants) {
-        return restaurantRepository.save(restaurants);
+        return this.restaurantRepository.save(restaurants);
+
     }
 
     @Override
@@ -27,6 +29,6 @@ public class RestaurantServiceImpl implements RestaurantService {
     @Override
     public Restaurant findByName(String restname) {
 
-        return restaurantRepository.findFirstByRestname(restname);
+        return restaurantRepository.findByRestname(restname);
     }
 }

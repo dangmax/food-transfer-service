@@ -11,4 +11,6 @@ public interface RestaurantService {
     void deleteAll();
 
     Restaurant findByName(String restname);
+
+
 }

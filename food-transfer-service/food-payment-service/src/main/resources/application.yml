@@ -16,8 +16,9 @@ spring:
     database: mysql
     show-sql: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
   thymeleaf:
     suffix: .html
     encoding: UTF-8
     cache: false
+    mode: HTML5

@@ -13,20 +13,13 @@ import java.io.IOException;
 
 @EnableBinding(Sink.class)
 @Slf4j
-@MessageEndpoint
+//@MessageEndpoint
 public class FoodDeliverySink {
 
-    @Autowired
-    private SimpMessagingTemplate template;
-
-    @Autowired
-    private ObjectMapper objectMapper;
-
     @ServiceActivator(inputChannel = Sink.INPUT)
+    public void delivery(String payInfo) throws IOException {
 
-    public void delivery(String input) throws IOException {
-        log.info("delivery order " + input);
-        //CurrentPosition position = this.objectMapper.readValue(input, CurrentPosition.class);
-        //this.template.convertAndSend("/topic/locations", position);
+        log.info("delivery pay_order: " + payInfo);
+
     }
 }

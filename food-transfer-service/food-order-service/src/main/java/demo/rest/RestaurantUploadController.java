@@ -23,62 +23,65 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Controller
 @RequestMapping(value = "/restaurant")
 public class RestaurantUploadController {
 
-    @Autowired
+
     private RestaurantService restaurantService;
 
-    @Autowired
     private DishOrderRepository orderRepository;
 
-    @Autowired
-    private RestTemplate restTemplate;
-
-//    @Autowired
-//    public RestaurantUploadController(RestaurantRepository repository,DishOrderRepository orderRepository) {
-//		 this.repository      = repository;
-//		 this.orderRepository = orderRepository;
-//    }
-
-
-    @RequestMapping(value = "/bulk/supplyRestaurants", method = RequestMethod.POST)
-    @ResponseStatus(HttpStatus.CREATED)
-    public List<Restaurant> upload(@RequestBody List<Restaurant> restaurants) {
-        return this.restaurantService.saveRestaurants(restaurants);
+    public RestaurantUploadController() {
     }
 
+    @Autowired
+    public RestaurantUploadController(DishOrderRepository orderRepository,RestaurantService restaurantService) {
+		 this.orderRepository = orderRepository;
+		 this.restaurantService = restaurantService;
+    }
+
+    //batch upload restaurant
+    @RequestMapping(value = "/bulk/supplyRestaurants", method = RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public void upload(@RequestBody List<Restaurant> restaurants) {
+        this.restaurantService.saveRestaurants(restaurants);
+    }
+
+    //purge
     @RequestMapping(value = "/purge", method = RequestMethod.DELETE)
     public void purge() {
         this.restaurantService.deleteAll();
     }
 
+    //find restaurant by name
     @RequestMapping(value = "/findbyname", method = RequestMethod.GET)
-    public String findRestByName(String restname) {
+    public String findRestByName(@RequestParam String restname,Model model) {
+        log.info("begin findbyname");
         String goPage;
         Restaurant restaurant = this.restaurantService.findByName(restname);
         if (restaurant == null) {
             log.info("can not find restaurant!");
-            goPage = "error";
+            model.addAttribute("errorMsg","can not find restaurant!");
+            goPage = "/error";
         } else {
             goPage = "make_order";
         }
         return goPage;
     }
 
-    //@RequestMapping(value = "/running/runningId/{runningId}", method = RequestMethod.GET)
-    //public Page<Location> findByRunningId(@PathVariable String runningId, @RequestParam(name = "page") int page, @RequestParam(name = "size") int size) {
-    //    return this.locationService.findByRunningId(runningId, new PageRequest(page, size));
-    //}
+    // for unit test use
+    public List<Restaurant> bulkUpload(List<Restaurant> restaurants) {
+        return this.restaurantService.saveRestaurants(restaurants);
+    }
 
 }

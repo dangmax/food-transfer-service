@@ -3,10 +3,9 @@ package demo.domain;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
@@ -16,10 +15,23 @@ public class Payment {
 
     @Id
     @GeneratedValue
-    private long pay_id;
+    private long payId;
+    private String payTime;
+    private String deliveryTime;
+    private long orderId;
+    private double totalPrice;
+    private String deliveryAddress;
 
-    private Date pay_time;
-    private String delivery_time;
-    private long dish_order_id;
 
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "payId=" + payId +
+                ", payTime=" + payTime +
+                ", deliveryTime='" + deliveryTime + '\'' +
+                ", orderId=" + orderId +
+                ", totalPrice=" + totalPrice +
+                ", deliveryAddress='" + deliveryAddress + '\'' +
+                '}';
+    }
 }

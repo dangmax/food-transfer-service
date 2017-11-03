@@ -23,12 +23,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
+@RequestMapping(value = "/")
 public class FoodOrderController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String queryRest() {
-
-        return "query_rest";
+        return "index";
     }
 
 

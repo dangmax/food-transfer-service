@@ -7,8 +7,13 @@ spring:
     suffix: .html
     encoding: UTF-8
     cache: false
+    mode: HTML5
+  data:
+    mongodb:
+      uri: mongodb://dang:dang@localhost:27017/fooddb
 com:
   dang:
     food:
       payment: http://localhost:9006
+
 
